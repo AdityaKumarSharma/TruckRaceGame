@@ -1,0 +1,155 @@
+<!--********************************************************************/
+/******************* Created by: Aditya Sharma ************************/
+/******************* FileName: index.html *****************************/
+/******************* Email: adityakumarsharma1988@gmail.com ***********/
+/**********************************************************************-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Truck Race</title>
+  <script src="./scripts/handlebars.min.js"></script>
+  <script id="gameSetupTemplate" type="text/x-handlebars-template">
+    <div class="header">
+      <h1>MAD TRUCKS</h1>
+    </div>
+    <div class="setupPage">
+      <div class="subHeader">Setup Page</div>
+      <div class="setupContent">
+        <div class="mytable">
+          <div class="column1"></div>
+          <div class="column2"></div>
+          <div class="myrow">
+            <div class="mycell">Player Name:</div>
+            <div class="mycell"><input type="text" id ="playerName" placeholder="Enter Player Name"/></div>
+          </div>
+          <div class="myrow">
+            <div class="mycell">Number Of Trucks:</div>
+            <div class="mycell">
+              <select id="truckNum" autocomplete="on">
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+              </select>
+            </div>
+          </div>
+          <div class="myrow">
+            <div class="mycell">Initial Fund:</div>
+            <div class="mycell"><input type="number" id="initialFund" min="1" placeholder="Enter Initial Fund"/></div>
+          </div>
+          <div class="myrow">
+            <div class="mycell" id="button">
+              <ul>
+                <li id="startGameButton">Start Game</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </script>
+  <script id="gameStartTemplate" type="text/x-handlebars-template">
+    <div class="header">
+      <h1>MAD TRUCKS</h1>
+    </div>
+    <div class="buttonBar">
+      <ul>
+        <li id="placeBetButton">Place Bet</li>
+        <li id="resetButton">Reset Trucks</li>
+        <li id="startRaceButton">Start Race</li>
+        <li id="setup">Setup</li>
+      </ul>
+    </div>
+    <div class="raceField">
+      <div id="declareWinner"></div>
+      <div class="betPrice">
+        {{#times truckNum}}
+        <div id="p{{this}}"><div class="price">Truck {{this}}</div></div>  <!--Print Bet -->
+        {{/times}}
+      </div>
+      <div class="startPoint">
+        {{#times truckNum}}
+        <div id="div{{this}}"><div id="truck{{this}}" class="truck">T{{this}}</div></div> <!--Print Trucks-->
+        {{/times}}
+      </div>
+      <div class="raceTrack">
+        {{#times truckNum}}
+        <div class="raceTrackUnit" id="raceTrack{{this}}" name=truck{{this}}></div>  <!--Print Track-->
+        {{/times}}
+      </div>
+    </div>
+    <div class="playerSection">
+      <div class="player">
+        <div class="playerPic"></div>
+        <div class="playerDetails">
+          <div class="playerName"><h3>{{name}}</h3></div>
+          <div class="playerBalance">${{fund}}</div>
+        </div>
+      </div>
+      <div class="player">
+        <div class="addPlayer">Add Players ++</div>
+      </div>
+    </div>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div>
+          <div class="modelHeader">
+            <h2>Place Bet</h2>
+          </div>
+          <div class="content">
+            <div class="mytable">
+              <div class="column1"></div>
+              <div class="column2"></div>
+              {{#times truckNum}}
+              <div class="myrow">
+                <div class="mycell">Trucker {{this}}</div>
+                <div class="mycell"><input type="number" class="Trucker" placeholder="Enter Your Bet Price" min="1"/></div>
+              </div>
+              {{/times}}
+            </div>
+            <div id="modalAlert"></div>
+          </div>
+          <div class="modelButtons">
+            <ul>
+              <li id="modelPlaceBet">Place Bet</li>
+              <li id="modelReset">Reset Bet</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </script>
+
+  <!-- Design icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <!-- Your styles -->
+  <link rel="stylesheet" href="styles/main.css">
+  <style>
+
+  </style>
+
+</head>
+<body>
+
+<div class="container">
+  <!-- Main Container -->
+</div>
+
+
+<!-- One JS File Main.js -->
+<script src="scripts/main.js"></script>
+
+</body>
+</html>
