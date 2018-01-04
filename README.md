@@ -36,14 +36,13 @@ Racing and Betting on trucks
 /***** Add New Features And Enhancements To Ease The User Experience ******/
 /**************************************************************************/
  
-1). Better UI
-2). Only JavaScript with Revealing Modular Pattern and HandleBar as a templating library has been used.(Just to keep it native/fast with minimum resource)
-3). Responsive up to a limit, as no wireframe was provided for Mobile and Tablet view. (No Images Were Provided)
-4). Added Reset Button on “Place Bet Modal”.
-5). Added a Reset Truck position button / Soft Reset , so that Player can continue the race from start position, (In the Description,after even Race Player has to Reset which was inconvenient sometimes )
-6). Added a Setup /Hard Refresh to get the game start again freshly.
-7). Introduced a Player Card 
-8). Keeping future enhancements in mind 
+1). Only JavaScript with Revealing Modular Pattern and HandleBar as a templating library has been used.(Just to keep it native/fast with minimum resource)
+2). fluid up to a limit.
+3). Added Reset Button on “Place Bet Modal”.
+4). Added a Reset Truck position button / Soft Reset , so that Player can continue the race from start position, (In the Description,after even Race Player has to Reset which was inconvenient sometimes )
+5). Added a Setup /Hard Refresh to get the game start again freshly.
+6). Introduced a Player Card 
+7). Keeping future enhancements in mind 
 	>> Added a button for adding more players
 
 
